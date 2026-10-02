@@ -8,6 +8,9 @@ My HackerRank problem-solving journey, solutions, and programming practice.
 - C++
 - Java
 - Python
+- MySQL
+- SQL
+- DSA
 
 ## Topics
 
