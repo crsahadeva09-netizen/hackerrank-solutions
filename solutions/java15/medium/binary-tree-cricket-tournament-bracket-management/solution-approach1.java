@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-10-06, 10:52 p.m.
+// Technique   level-order-queue-tree-construction
+// Time        O(N)
+// Space       O(N)
+// Insight     The implementation uses a queue to perform a level-order reconstruction of the binary tree from a flat array, where -1 values signify null children, followed by a recursive pre-order traversal to output the node data.
+// Interview   Before: "How would you represent a tournament bracket as a tree?" After: "I would use a level-order queue-based construction to map the array to a binary tree, then perform a recursive pre-order traversal. This approach runs in O(N) time and space, correctly handling the -1 null indicators specified in the problem."
+// Pitfalls    (1) Failing to increment the index i twice per loop iteration, which causes the tree construction to misalign with the input array structure.  (2) Incorrectly handling the -1 sentinel value, which must be treated as a null child rather than a valid node in the tree.  (3) Assuming the input array is perfectly balanced, whereas the queue-based approach must explicitly check for -1 to avoid creating phantom nodes.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
