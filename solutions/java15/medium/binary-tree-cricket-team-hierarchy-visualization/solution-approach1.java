@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-10-08, 12:11 p.m.
+// Technique   level-order-traversal-queue
+// Time        O(N)
+// Space       O(W)
+// Insight     The algorithm performs a level-order traversal using a queue, capturing the last node processed at each depth level to represent the right-side view of the binary tree.
+// Interview   Before: "How do you extract the rightmost nodes of a tree?" After: "I use a level-order traversal with a queue, where the last node of each level is printed. This approach runs in O(N) time and O(W) space, where W is the maximum width of the tree."
+// Pitfalls    (1) The implementation assumes the input array is non-empty, which may cause a NullPointerException if the root is missing.  (2) The loop condition i < n in buildtree might fail if the input array length does not match the provided count n.  (3) The rightview method does not handle a null root input, leading to a NullPointerException on q.offer(root).
 // ──────────────────────────────────────────────────
 
 import java.io.*;
