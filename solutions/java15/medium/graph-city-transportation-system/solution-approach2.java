@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-05, 12:12 p.m.
+// Technique   adjacency-list-with-sorting
+// Time        O(E log E + V)
+// Space       O(V + E)
+// Insight     The implementation uses an adjacency list with 1-based indexing to store undirected edges, ensuring each city's neighbors are sorted before output.
+// Interview   Before: "I will use an adjacency matrix to store the graph." After: "Using an adjacency list with O(V+E) space is more efficient for sparse graphs, and sorting the neighbors ensures the output matches the required format in O(E log E) time."
+// Pitfalls    (1) Using 0-based indexing for input cities when the problem requires 1-based output formatting.  (2) Failing to sort the adjacency list, which may lead to incorrect output order compared to the expected results.  (3) Allocating an adjacency list of size v instead of v+1, causing an IndexOutOfBoundsException when accessing index v.
 // ──────────────────────────────────────────────────
 
 // import java.io.*;
