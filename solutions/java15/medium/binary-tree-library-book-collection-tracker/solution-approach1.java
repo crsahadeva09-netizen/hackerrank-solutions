@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-09, 11:34 p.m.
+// Technique   level-order-queue-insertion
+// Time        O(n)
+// Space       O(n)
+// Insight     The implementation uses a queue to perform level-order insertion of nodes into a binary tree, followed by a recursive traversal to count the total number of nodes.
+// Interview   Before: "How would you build a binary tree from an array and count its nodes?" After: "I use a queue to maintain the insertion order for a complete binary tree structure, ensuring O(n) time and space complexity to process all n nodes."
+// Pitfalls    (1) The queue-based insertion assumes a level-order filling pattern which may not match arbitrary tree construction requirements.  (2) The code fails if the input array is empty because it accesses arr[0] without checking the array length.  (3) The recursive count method may cause a StackOverflowError for extremely deep, skewed trees.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
