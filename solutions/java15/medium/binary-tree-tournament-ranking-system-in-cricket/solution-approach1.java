@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-09, 11:16 p.m.
+// Technique   level-order-queue-tree-construction
+// Time        O(N)
+// Space       O(N)
+// Insight     The implementation uses a queue to reconstruct the binary tree from a level-order array representation, then performs a recursive inorder traversal to visit nodes in left-root-right order.
+// Interview   Before: "How do I convert a level-order array into a tree?" After: "Use a queue to track parent nodes while iterating through the array, assigning children based on non-null values. This approach runs in O(N) time and O(N) space, correctly handling the null placeholders specified in the problem."
+// Pitfalls    (1) Failing to increment the index i correctly when encountering a null value in the level-order array.  (2) Assuming the input array length always matches the number of nodes provided in the first line of input.  (3) Neglecting to check if the index i is within bounds before accessing the array for right child assignment.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
