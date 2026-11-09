@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-09, 11:13 p.m.
+// Technique   queue-based-level-order-insertion
+// Time        O(n)
+// Space       O(n)
+// Insight     The implementation uses a queue to maintain the insertion order, ensuring that each node is filled left-to-right to construct a complete binary tree structure.
+// Interview   Before: "How would you build a binary tree from an array?" After: "I use a queue to track parent nodes, ensuring each new element is assigned as the next available left or right child. This O(n) approach correctly builds the tree and performs a level-order traversal in O(n) time."
+// Pitfalls    (1) Accessing arr[i] without checking i < arr.length inside the loop can cause an ArrayIndexOutOfBoundsException.  (2) Failing to handle the case where the input array is empty, as the code assumes arr[0] exists.  (3) Incorrectly assuming the tree is a Binary Search Tree, whereas this implementation strictly follows the registration order.
 // ──────────────────────────────────────────────────
 
 // import java.io.*;
