@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-09, 11:37 p.m.
+// Technique   level-order-queue-construction-recursive-depth
+// Time        O(N)
+// Space       O(N)
+// Insight     The algorithm reconstructs the binary tree from a level-order array using a queue and then computes the maximum depth by recursively finding the height of the subtrees.
+// Interview   Before: "How would you calculate the maximum depth of a binary tree given its level-order representation?" After: "I build the tree using a queue to track parent nodes, then use a recursive O(N) depth-first search to find the longest path, handling null nodes as depth zero."
+// Pitfalls    (1) The level-order construction assumes the input array follows the standard binary tree serialization where nulls are explicitly provided for missing children.  (2) The recursive maxDepth function will throw a NullPointerException if called on a null root, though the current implementation handles this with a base case check.  (3) The index i in the buildtree method must be carefully managed to ensure it does not exceed the array bounds when accessing children.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
