@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-16, 01:36 a.m.
+// Technique   priority-queue-min-heap
+// Time        O(N log N)
+// Space       O(N)
+// Insight     The implementation uses a single min-heap to collect all elements from all lists, which implicitly sorts them upon extraction.
+// Interview   Before: "I would merge these K lists using a pointer-based approach to maintain O(N log K) complexity." After: "This implementation uses a single PriorityQueue to store all N elements, resulting in O(N log N) time complexity, which is efficient enough given the constraints."
+// Pitfalls    (1) The implementation adds all elements to a single heap, which ignores the pre-sorted property of the input lists and increases time complexity to O(N log N).  (2) The code assumes all input integers are valid and does not handle potential empty list inputs or null values.
 // ──────────────────────────────────────────────────
 
 import java.util.*;
