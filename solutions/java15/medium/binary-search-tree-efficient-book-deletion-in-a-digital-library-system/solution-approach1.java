@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-15, 10:36 p.m.
+// Technique   recursive-bst-node-deletion
+// Time        O(h)
+// Space       O(h)
+// Insight     The algorithm maintains the binary search tree property by replacing a node having two children with its in-order successor, which is the minimum value in its right subtree.
+// Interview   Before: "How do you remove a node with two children from a BST?" After: "You locate the in-order successor, copy its value to the target node, and recursively delete that successor node, resulting in O(h) time complexity where h is the tree height."
+// Pitfalls    (1) Failing to handle the case where the node to be deleted is the root of the tree.  (2) Incorrectly updating the parent's child reference when the deleted node has only one child.  (3) Forgetting to re-assign the result of the recursive deleteNode call to the parent's left or right pointer.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
