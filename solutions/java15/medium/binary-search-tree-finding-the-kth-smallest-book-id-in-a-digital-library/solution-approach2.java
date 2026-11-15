@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-15, 09:30 p.m.
+// Technique   in-order-traversal-list-storage
+// Time        O(N)
+// Space       O(N)
+// Insight     The implementation performs a full in-order traversal to populate a list, allowing the Kth smallest element to be retrieved via direct index access.
+// Interview   Before: "I would perform a recursive in-order traversal to collect all nodes into a sorted list." After: "Since the list is sorted, I access the element at index k-1 in O(1) time, resulting in O(N) total time and O(N) space complexity to store the tree nodes."
+// Pitfalls    (1) Accessing index k-1 without verifying if k is within the bounds of the list size, which causes an IndexOutOfBoundsException.  (2) Assuming the input k is always valid, as the problem statement implies a need to handle cases where k is out of range.
 // ──────────────────────────────────────────────────
 
 import java.util.*;
