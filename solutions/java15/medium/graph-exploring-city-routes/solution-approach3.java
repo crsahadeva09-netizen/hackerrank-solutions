@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-16, 12:26 a.m.
+// Technique   recursive-dfs-adjacency-list
+// Time        O(V + E)
+// Space       O(V + E)
+// Insight     The algorithm maintains a visited array to track explored nodes and recursively traverses unvisited neighbors in an adjacency list representation of an undirected graph.
+// Interview   Before: "How would you perform a depth-first traversal on an undirected graph?" After: "I would use an adjacency list to store the graph and a boolean array to track visited nodes, ensuring O(V + E) time complexity by visiting each node and edge exactly once."
+// Pitfalls    (1) Failing to initialize the adjacency list with v+1 capacity leads to an IndexOutOfBoundsException when accessing nodes indexed from 1 to v.  (2) Forgetting to mark nodes as visited immediately upon printing causes infinite recursion in graphs containing cycles.  (3) Assuming the graph is directed when the problem implies undirected roads, which requires adding edges in both directions.
 // ──────────────────────────────────────────────────
 
 // import java.io.*;
