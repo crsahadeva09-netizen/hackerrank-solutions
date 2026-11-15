@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-15, 12:15 p.m.
+// Technique   recursive-dfs-adjacency-list
+// Time        O(V + E)
+// Space       O(V + E)
+// Insight     The algorithm maintains a visited array to track explored nodes and recursively traverses unvisited neighbors in the order they appear in the adjacency list.
+// Interview   Before: "How would you perform a depth-first traversal on this graph?" After: "I implemented a recursive DFS using an adjacency list, which achieves O(V + E) time complexity by visiting each node and edge exactly once, ensuring we explore as far as possible along each branch before backtracking."
+// Pitfalls    (1) The adjacency list is initialized with size v+1 to accommodate 1-based indexing, which will cause an ArrayIndexOutOfBoundsException if the input contains a city index greater than v.  (2) The recursion depth is limited by the number of cities, which may trigger a StackOverflowError for extremely large, linear graph structures.  (3) The order of traversal is strictly dependent on the input order of edges in the adjacency list, which may differ from sorted order.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
