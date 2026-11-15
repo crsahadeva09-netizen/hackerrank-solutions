@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-16, 01:33 a.m.
+// Technique   max-priority-queue-polling
+// Time        O(N log N)
+// Space       O(N)
+// Insight     The implementation utilizes a max-priority queue to store all scores, allowing the Kth largest element to be retrieved by performing K successive poll operations.
+// Interview   Before: "How would you find the Kth largest score from a list of strings?" After: "I would parse the strings into integers and use a max-priority queue to extract the Kth largest value in O(N log N) time, ensuring correct numerical comparison rather than lexicographical sorting."
+// Pitfalls    (1) Using lexicographical comparison instead of integer comparison for string-based scores.  (2) Failing to account for the requirement that duplicate scores are treated as distinct entities in the ranking.  (3) Assuming the input size N is small enough to avoid potential integer overflow if scores exceed the range of a 32-bit signed integer.
 // ──────────────────────────────────────────────────
 
 import java.util.*;
