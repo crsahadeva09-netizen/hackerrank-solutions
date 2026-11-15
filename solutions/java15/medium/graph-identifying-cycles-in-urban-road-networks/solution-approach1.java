@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-16, 12:59 a.m.
+// Technique   dfs-undirected-cycle-detection
+// Time        O(V + E)
+// Space       O(V + E)
+// Insight     The algorithm detects a cycle in an undirected graph by performing a depth-first search and identifying any back-edge to a previously visited node that is not the immediate parent.
+// Interview   Before: "How do you detect cycles in an undirected graph?" After: "I use DFS to track visited nodes and the parent pointer; if I encounter a visited neighbor that isn't the parent, a cycle exists. This runs in O(V + E) time and space, handling disconnected components by iterating through all vertices."
+// Pitfalls    (1) Failing to pass the parent node in the recursive DFS call leads to incorrectly identifying the edge back to the parent as a cycle.  (2) Initializing the adjacency list with size v instead of v+1 causes an IndexOutOfBoundsException when accessing vertices indexed up to v.  (3) Neglecting to iterate through all vertices in the main loop prevents cycle detection in disconnected graph components.
 // ──────────────────────────────────────────────────
 
 import java.util.*;
