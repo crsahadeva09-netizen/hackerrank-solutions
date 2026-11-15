@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-15, 03:28 p.m.
+// Technique   level-order-queue-tree-construction
+// Time        O(N)
+// Space       O(N)
+// Insight     The implementation uses a queue to perform a level-order reconstruction of the binary tree from a flat array, where -1 values are treated as null children to maintain the structural integrity of the tournament bracket.
+// Interview   Before: "How would you represent a tournament bracket as a tree?" After: "I use a level-order queue-based approach to build the tree in O(N) time and space, explicitly handling the -1 sentinel values to correctly identify null children in the bracket structure."
+// Pitfalls    (1) Failing to increment the index i correctly when encountering -1, which causes the tree construction to misalign with the input array.  (2) Assuming the input array is perfectly balanced, ignoring that -1 values must be explicitly checked to prevent creating nodes with data -1.  (3) Incorrectly handling the queue poll operation when a node has no children, leading to premature termination of the tree construction.
 // ──────────────────────────────────────────────────
 
 // import java.io.*;
