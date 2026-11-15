@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-16, 12:39 a.m.
+// Technique   dfs-connected-components
+// Time        O(V + E)
+// Space       O(V + E)
+// Insight     The algorithm calculates the minimum cost by identifying connected components via DFS and choosing between building a library in every city or building one library per component with roads connecting the remaining cities.
+// Interview   Before: "How do we minimize costs when libraries and roads have different prices?" After: "We use DFS to find connected components in O(V+E) time. If library costs are lower than road costs, we build libraries everywhere; otherwise, we build one library per component and connect the rest."
+// Pitfalls    (1) Failing to handle the case where c_lib is less than c_road, which makes building roads suboptimal.  (2) Incorrectly initializing the adjacency list size to v instead of v+1, causing index out of bounds errors for 1-indexed cities.  (3) Forgetting to mark nodes as visited during DFS, leading to infinite recursion in cyclic graphs.
 // ──────────────────────────────────────────────────
 
 import java.util.*;
