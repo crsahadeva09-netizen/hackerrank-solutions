@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-15, 12:47 p.m.
+// Technique   queue-based-bfs-traversal
+// Time        O(V + E)
+// Space       O(V + E)
+// Insight     The algorithm maintains a queue to explore nodes level-by-level while using a visited array to ensure each district is processed exactly once.
+// Interview   Before: "How would you traverse a graph level-by-level?" After: "I use a queue to store nodes and a visited array to prevent cycles, achieving O(V + E) time complexity, which is optimal for exploring all connected districts in a road network."
+// Pitfalls    (1) Failing to initialize the adjacency list up to index v, which causes an IndexOutOfBoundsException when accessing nodes.  (2) Forgetting to mark nodes as visited immediately upon adding them to the queue, leading to redundant processing of the same district.  (3) Assuming the graph is directed when the problem implies an undirected road network, requiring bidirectional edge insertion.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
