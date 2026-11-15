@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-15, 10:07 p.m.
+// Technique   recursive-bst-search-inorder
+// Time        O(N)
+// Space       O(H)
+// Insight     The algorithm performs a standard recursive search to locate the target node and subsequently executes an in-order traversal to output all nodes within the identified subtree.
+// Interview   Before: "How would you find a book and list its related subtree?" After: "I implemented a recursive search that runs in O(H) time, where H is the tree height, followed by an O(N) in-order traversal of the subtree to display all related books."
+// Pitfalls    (1) Failing to handle the case where the search target does not exist in the BST, which requires printing 'Book not found'.  (2) Incorrectly implementing the in-order traversal, which must visit the left child, then the current node, then the right child to maintain sorted order.  (3) Assuming the BST is balanced, which could lead to O(N) worst-case time complexity if the tree is skewed.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
