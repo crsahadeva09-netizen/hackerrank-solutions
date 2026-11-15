@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-16, 01:50 a.m.
+// Technique   recursive-bst-pruning
+// Time        O(N)
+// Space       O(H)
+// Insight     The algorithm recursively prunes nodes outside the [low, high] range by returning the valid subtree of a child when the current node violates the boundary conditions.
+// Interview   Before: "I would perform a level-order traversal to filter nodes." After: "I implemented a recursive pruning approach that achieves O(N) time complexity, where N is the number of nodes, by leveraging the BST property to discard entire subtrees that fall outside the [low, high] range."
+// Pitfalls    (1) Failing to reassign the root pointer when the original root node falls outside the [low, high] range.  (2) Neglecting to update child pointers during recursion, which prevents the tree structure from correctly reflecting the pruned nodes.
 // ──────────────────────────────────────────────────
 
 
