@@ -7,6 +7,12 @@
 // Language    java15
 // Status      Accepted
 // Submitted   2026-11-15, 02:24 p.m.
+// Technique   kosaraju-inspired-two-pass-dfs
+// Time        O(V + E)
+// Space       O(V + E)
+// Insight     The algorithm verifies strong connectivity by performing two depth-first searches, one on the original graph and one on the reversed graph, to ensure all nodes are reachable from a single source in both directions.
+// Interview   Before: "How do you check if a directed graph is strongly connected?" After: "You can use two DFS passes in O(V+E) time; the first confirms all nodes are reachable from a starting node, and the second, on the reversed graph, confirms the starting node is reachable from all others."
+// Pitfalls    (1) The implementation assumes the graph is 1-indexed based on the input, which may cause an ArrayIndexOutOfBoundsException if the input contains 0 or values greater than v.  (2) The code fails to handle disconnected components correctly if the graph has isolated nodes that are not reachable from the chosen starting node 1.  (3) The logic assumes node 1 always exists in the graph, which will crash if the input provides n=0.
 // ──────────────────────────────────────────────────
 
 import java.io.*;
